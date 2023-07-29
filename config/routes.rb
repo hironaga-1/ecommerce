@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :customers, controllers: {
     sessions: 'customer/sessions',
-    registrations: 'customer/registraitons'
+    registrations: 'customer/registrations'
   }
   devise_for :admins, controllers: {
     sessions: 'admin/sessions'
