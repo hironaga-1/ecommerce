@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  devise_for :customers, controllers: {
+    sessions: 'customer/sessions',
+    registrations: 'customer/registraitons'
+  }
+  devise_for :admins, controllers: {
+    sessions: 'admin/sessions'
+  }
   root to: 'pages#home'
 
   get '/up/', to: 'up#index', as: :up
