@@ -3,7 +3,7 @@ class Admin::CustomersController < ApplicationController
   before_action :set_customer, only: %i[show update]
 
   def index
-    @customers = Customer.latest
+    @customers = Customer.preload(:orders).latest
   end
 
   def show; end
@@ -19,7 +19,7 @@ class Admin::CustomersController < ApplicationController
     @customer = Customer.find(params[:id])
   end
 
-  def customer_params
+  def customer_paramsgit
     params.require(:customer).permit(:status)
   end
 end
