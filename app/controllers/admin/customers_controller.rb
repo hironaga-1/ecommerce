@@ -19,7 +19,7 @@ class Admin::CustomersController < ApplicationController
     @customer = Customer.find(params[:id])
   end
 
-  def customer_paramsgit
+  def customer_params
     params.require(:customer).permit(:status)
   end
 end
